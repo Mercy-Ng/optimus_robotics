@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Sensors & Actuators</h1>
+
+    <section>
+        <h2>1. Fundamental Theory of Sensors & Actuators</h2>
+
+        <h3>1.1 Sensor Physics & Characteristics</h3>
+        <ul>
+            <li><strong>Sensitivity:</strong> ΔOutput/ΔInput (e.g., 10mV/°C for LM35)</li>
+            <li><strong>Resolution:</strong> Smallest detectable change (e.g., 0.1°C for DS18B20)</li>
+            <li><strong>Hysteresis:</strong> Output variation when input reverses (critical in pressure sensors)</li>
+            <li><strong>Nonlinearity:</strong> Maximum deviation from best-fit straight line (%FS)</li>
+        </ul>
+
+        <h4>Noise Analysis:</h4>
+        <ul>
+            <li><strong>Thermal Noise:</strong> Vn = √(4kTRB)</li>
+            <li><strong>1/f Noise:</strong> Dominates at low frequencies</li>
+        </ul>
+
+        <p><strong>Example:</strong> Calculate SNR for a load cell with 2mV RMS noise at 10mV full scale:</p>
+        <code>SNR = 20log(10mV/2mV) = 13.98dB</code>
+
+        <h3>1.2 Actuator Dynamics</h3>
+        <p><strong>DC Motor:</strong> τ = Kt·I, V = Ke·ω + I·R</p>
+        <p><strong>Stepper Motor:</strong> τ = n·I·L·B</p>
+        <p><strong>Thermal Limits:</strong> ΔT = Rth·I²R</p>
+    </section>
+
+    <section>
+        <h2>2. Advanced Sensor Implementations</h2>
+
+        <h3>2.1 High-Precision Temperature Sensing (RTD)</h3>
+        <pre><code class="language-python">
+                import numpy as np
+
+                def read_rtd(V_exc, V_sense, R_ref=100.0):
+                    R_rtd = (V_sense * R_ref) / V_exc
+                    T = (-242.02 + np.sqrt(242.02**2 - 4*0.00079*(1-R_rtd/100)))/(2*0.00079)
+                    return T
+                </code></pre>
+                <p><strong>Challenge:</strong> Design a PCB guard ring to reduce leakage currents.</p>
+
+                <h3>2.2 MEMS IMU Sensor Fusion (Madgwick Filter)</h3>
+                <pre><code class="language-python">
+                        import math
+
+                        class Madgwick:
+                            def __init__(self, beta=0.1):
+                                self.q = [1.0, 0.0, 0.0, 0.0]
+                                self.beta = beta
+
+                            def update(self, gx, gy, gz, ax, ay, az, dt):
+                                # Normalize accelerometer
+                                norm = math.sqrt(ax*ax + ay*ay + az*az)
+                                ax, ay, az = ax/norm, ay/norm, az/norm
+                                ...
+                </code></pre>
+                <p><strong>Lab Exercise:</strong> Characterize gyro bias instability using Allan variance plots.</p>
+            </section>
+
+            <section>
+                <h2>3. Advanced Actuator Control</h2>
+
+                <h3>3.1 Brushless Motor FOC</h3>
+                <pre><code class="language-python">
+                    def clarke_transform(Ia, Ib, Ic):
+                        Iα = Ia
+                        Iβ = (2*Ib + Ia)/np.sqrt(3)
+                        return Iα, Iβ
+
+                    def park_transform(Iα, Iβ, θ):
+                        Id = Iα*np.cos(θ) + Iβ*np.sin(θ)
+                        Iq = -Iα*np.sin(θ) + Iβ*np.cos(θ)
+                        return Id, Iq
+                </code></pre>
+
+                <h3>3.2 Piezoelectric Actuator Drive</h3>
+                <pre><code class="language-python">
+                    class PiezoDriver:
+                        def __init__(self, Vmax=150, C=1e-6, R=100):
+                            self.V = 0
+                            self.dVmax = Vmax/(R*C)
+
+                        def set_voltage(self, V_target, dt):
+                            dV = min(self.dVmax*dt, abs(V_target - self.V))
+                            self.V += dV*np.sign(V_target - self.V)
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>4. Integrated Smart Systems</h2>
+
+                <h3>4.1 Self-Balancing Robot</h3>
+                <pre><code class="language-python">
+                        A = np.array([[0, 1, 0, 0],
+                                    [0, -b/M, -m*g/M, 0],
+                                    [0, 0, 0, 1],
+                                    [0, -b/(M*l), (M+m)*g/(M*l), 0]])
+                        ...
+                        K = lqr(A,B,Q,R)
+                </code></pre>
+
+                <h3>4.2 Smart Irrigation System</h3>
+                <pre><code class="language-python">
+                    class IrrigationController:
+                        def __init__(self, threshold=25, hysteresis=5):
+                            self.wet = threshold + hysteresis
+                            self.dry = threshold - hysteresis
+                            self.state = False
+
+                        def update(self, moisture):
+                            if not self.state and moisture < self.dry:
+                                self.state = True
+                            elif self.state and moisture > self.wet:
+                                self.state = False
+                            return self.state
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>5. Project Challenges</h2>
+
+                <h3>5.1 Autonomous Drone Swarm</h3>
+                <pre><code class="language-python">
+                    def potential_field(position, obstacles):
+                        k_rep = 1.0
+                        F = np.zeros(2)
+                        for obs in obstacles:
+                            d = position - obs.position
+                            dist = np.linalg.norm(d)
+                            if dist < obs.radius:
+                                F += k_rep*(1/dist - 1/obs.radius)*d/dist**3
+                        return F
+                </code></pre>
+
+                <h3>5.2 Exoskeleton Force Control</h3>
+                <pre><code class="language-python">
+                    class ForceSensor:
+                        def __init__(self, gf=2.0, R=350.0):
+                            self.gauge_factor = gf
+                            self.R = R
+
+                        def read_force(self, ΔR):
+                            return (ΔR/self.R)/self.gauge_factor * 1000  # in mN
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Debugging & Validation</h2>
+
+                <h3>1. Sensor Characterization</h3>
+                <pre><code class="language-python">
+                    from scipy import signal
+                    import matplotlib.pyplot as plt
+
+                    t = np.linspace(0, 1, 1000)
+                    input = np.sin(2*np.pi*10*t)
+                    output = sensor.read_continuous()
+
+                    f, H = signal.welch(input, output, fs=1000)
+                    plt.semilogx(f, 20*np.log10(H))
+                </code></pre>
+
+                <h3>2. Actuator Step Response</h3>
+                <pre><code class="language-python">
+                def measure_step_response(actuator, step_size, sample_rate=1e4):
+                    t, y = [], []
+                    actuator.set(0)
+                    time.sleep(1)
+                    ...
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Final Project: Biomedical Robotic Arm</h2>
+        <ul>
+            <li>7-DOF redundant manipulator</li>
+            <li>0.1mm positioning accuracy</li>
+            <li>&lt; 5ms force control latency</li>
+            <li>Sterile fluid-resistant enclosure</li>
+        </ul>
+
+        <pre><code class="language-python">
+            def admittance_control(F_measured, x_desired):
+                a = (F_measured - D*v - K*(x-x_desired))/M
+                v += a*dt
+                x += v*dt
+                return x
+        </code></pre>
+    </section>
+    <div class="content-box text-center">
+        <a href="{{ url_for('motion', course_name='electronics_and_microcontrollers') }}" class="btn btn-primary btn-lg">Go to Next Courses</a>
+    </div>
+
+    <style>
+        h1, h2, h3 {
+            color: #f7f8f8;
+        }
+        code, pre {
+            background-color: rgb(6, 105, 133);
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+        section {
+            background-color: rgb(20, 48, 56);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+{% endblock %}

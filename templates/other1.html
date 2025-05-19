@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center">
+    <h2 class="mb-5 fw-bold text-info">Our Courses</h2>
+    <div class="row g-4">
+        <!-- Course 1 -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-robot fa-3x text-info mb-3"></i>
+                    <h5 class="card-title fw-bold">Robotics Fundamentals</h5>
+                    <p class="card-text">Learn the basics of robotics, mechanical structures, and actuators using Arduino and Raspberry Pi.</p>
+                    <a href="/courses/robotics" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-microchip fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">Embedded Systems</h5>
+                    <p class="card-text">Understand embedded programming using C, Keil IDE, and ARM Cortex-M microcontrollers.</p>
+                    <a href="/courses/embedded" class="btn btn-outline-warning mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-cloud-sun-rain fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">IoT & Smart Agriculture</h5>
+                    <p class="card-text">Build smart irrigation systems with sensors and automate farming using IoT devices.</p>
+                    <a href="/courses/agriculture" class="btn btn-outline-primary mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-brain fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">AI with Python</h5>
+                    <p class="card-text">Explore artificial intelligence using Python, from basic algorithms to chatbot creation.</p>
+                    <a href="/courses/ai" class="btn btn-outline-success mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-network-wired fa-3x text-danger mb-3"></i>
+                    <h5 class="card-title fw-bold">Networking & Security</h5>
+                    <p class="card-text">Get hands-on with networking basics, cyber security, and safe device communication.</p>
+                    <a href="/courses/networking" class="btn btn-outline-danger mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-laptop-code fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">Web Dashboards</h5>
+                    <p class="card-text">Create interactive web dashboards using Flask and integrate data from sensors and devices.</p>
+                    <a href="/courses/web" class="btn btn-outline-warning mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

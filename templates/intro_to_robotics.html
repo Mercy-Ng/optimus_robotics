@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>Introduction to Robotics</h3>
+<div class="container mt-5 mb-5">
+    <h1 class="text-center text-primary mb-4">Module 1: Introduction to Robotics</h1>
+    <p class="text-center"><strong>Duration:</strong> 1 Week</p>
+
+    <div class="content-box">
+        <h4 class="module-heading">📘 Topics Covered</h4>
+        <ul>
+            <li><strong>Definition and History of Robotics</strong><br>
+                Robotics deals with the design, construction, and operation of robots. From ancient myths to modern industrial bots like Unimate, robotics has transformed industries and daily life.</li>
+            <li><strong>Types of Robots</strong>
+                <ul>
+                    <li><strong>Industrial Robots:</strong> For repetitive manufacturing tasks like welding and assembly.</li>
+                    <li><strong>Service Robots:</strong> Personal and professional helpers like Roomba or reception bots.</li>
+                    <li><strong>Medical Robots:</strong> Assisting surgery, diagnosis, and rehabilitation.</li>
+                    <li><strong>Autonomous Vehicles:</strong> Self-driving cars and drones using sensors and AI.</li>
+                </ul>
+            </li>
+            <li><strong>Applications in Real-World Scenarios</strong>
+                <ul>
+                    <li><strong>Manufacturing:</strong> Robotic arms improve speed and safety.</li>
+                    <li><strong>Healthcare:</strong> Assistive and surgical robots.</li>
+                    <li><strong>Agriculture:</strong> Precision farming with drones and robots.</li>
+                </ul>
+            </li>
+            <li><strong>Ethical and Societal Impacts</strong><br>
+                Concerns include job displacement, safety, privacy, and ethical AI. Inclusive and responsible design is crucial.
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-box">
+        <h4 class="module-heading">🛠️ Practical Example</h4>
+        <p><strong>Case Study:</strong> <em>Tesla’s use of robotic arms</em> — Analyze efficiency improvements in Tesla’s factories using real-world videos and robotic function breakdowns.</p>
+        <p><strong>Activity:</strong> Build a simple robotic arm using <em>cardboard, string, and syringes</em> to understand hydraulics and joint mechanics.</p>
+    </div>
+
+    <div class="content-box text-center">
+        <a href="{{ url_for('machanics', course_name='robot_components_and_mechanics') }}" class="btn btn-primary btn-lg">Next Module: Robot Components & Mechanics</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    .section-title {
+        background-color: #004080;
+        color: rgb(3, 3, 50);
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    .content-box {
+        background: rgb(1, 19, 24);
+        padding: 20px;
+        border-left: 5px solid #004080;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .module-heading {
+        color: #004080;
+    }
+</style>
+{% endblock %}

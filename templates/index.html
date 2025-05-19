@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-5">
+    <h6 class="display-4 fw-bold fs-2 text-light">Welcome to TUT & Optimas Robotics Lab</h6>
+    <!--h6 class="display-4 fw-bold fs-2 text-light">Sponsered by Microsoft</h6-->
+    <div class="mt-4">
+        <a href="/courses" class="btn btn-outline-light btn-lg me-3">Explore Courses</a>
+        <a href="/register" class="btn btn-primary btn-lg">Join Now</a>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="container mt-5">
+      <h4 class="text-center text-light mb-4"></h4>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="equal-image-card">
+              <img src="{{ url_for('static', filename='images/tut.png') }}" class="card-img-top" alt="Lab 1">
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="equal-image-card">
+              <img src="{{ url_for('static', filename='images/logo.jpeg') }}" class="card-img-top" alt="Lab 1">
+            </div>
+          </div>
+        </div>
+        <!--div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="equal-image-card">
+              <img src="{{ url_for('static', filename='images/micro.png') }}" class="card-img-top" alt="Lab 1">
+            </div>
+          </div>
+        </di>
+    </div-->  
+  </div>
+  <div class="row align-items-center mt-5">
+    <div class="col-md-6">
+        <h3 class="text-light">Hands-on Robotics Training</h3>
+        <p class="text-light">
+            We provide real-world robotics education tailored for university students.
+            Our programs blend theoretical concepts with practical experience using
+            Raspberry Pi, Arduino, various sensors, and artificial intelligence.
+        </p>
+    </div>
+</div>
+  <style>
+    .hover-card:hover {
+      background-color: #d1e7dd;
+      border-color: #0f5132;
+      transform: translateY(-5px);
+      transition: 0.3s ease-in-out;
+    }
+    .equal-image-card {
+      height: 200px;
+      overflow: hidden;
+    }
+  
+    .equal-image-card img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
+{% endblock %}

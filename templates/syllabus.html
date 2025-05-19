@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="text-primary fw-bold">📚 Optimas Robotics Level 1 – Beginner Syllabus</h2>
+    <p class="text-muted">Build, Code, and Control Your First Robot in 8 Weeks!</p>
+  </div>
+
+  <div class="row mb-4 text-center">
+    <div class="col-md-4"><span class="badge bg-success fs-6">📅 Duration: 8 Weeks</span></div>
+    <div class="col-md-4"><span class="badge bg-warning text-dark fs-6">🎓 Level: Beginner</span></div>
+    <div class="col-md-4"><span class="badge bg-info text-dark fs-6">🔄 Mode: Hybrid (Theory + Practical)</span></div>
+  </div>
+
+  <div class="card shadow mb-5">
+    <div class="card-header bg-dark text-white">
+      🧩 Module Breakdown (Weekly Topics & Activities)
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-bordered table-hover mb-0">
+        <thead class="table-primary text-center">
+          <tr>
+            <th>Week</th>
+            <th>Topic</th>
+            <th>Activities</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Week 1</td><td>What is Robotics? History and Future</td><td>Intro, Show famous robots (Boston Dynamics, Tesla Bot)</td></tr>
+          <tr><td>Week 2</td><td>Electronics for Robotics</td><td>Build basic LED circuits, understand resistors, motors</td></tr>
+          <tr><td>Week 3</td><td>Arduino Basics</td><td>Blink LED, use push button</td></tr>
+          <tr><td>Week 4</td><td>Mobile Robot Basics</td><td>Build 2-wheel drive robot (chassis + motor + Arduino)</td></tr>
+          <tr><td>Week 5</td><td>Sensors and Motors</td><td>Obstacle avoidance with Ultrasonic sensors</td></tr>
+          <tr><td>Week 6</td><td>Line Following Robot</td><td>Build line-tracking robot</td></tr>
+          <tr><td>Week 7</td><td>Humanoid Introduction</td><td>Study Optimas Bot architecture</td></tr>
+          <tr><td>Week 8</td><td>Mini-Project + Demo Day</td><td>Student teams present robots</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card shadow mb-5">
+    <div class="card-header bg-success text-white">
+      🧠 Skills Students Will Gain
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">🔧 Electronics wiring and soldering</li>
+        <li class="list-group-item">💻 Arduino programming (C/C++)</li>
+        <li class="list-group-item">🔩 Mechanical design basics</li>
+        <li class="list-group-item">📈 Sensor data collection and interpretation</li>
+        <li class="list-group-item">🚗 Robot motion and behavior control</li>
+        <li class="list-group-item">🤝 Teamwork and problem-solving</li>
+      </ul>
+    </div>
+    <div class="text-center mt-4">
+        <a href="/register" class="btn btn-lg btn-primary px-4 py-2 shadow-sm">
+          🚀 Enroll Now
+        </a>
+        <p class="text-muted mt-2">Limited seats available – secure yours today!</p>
+      </div>      
+  </div>
+</div>
+{% endblock %}

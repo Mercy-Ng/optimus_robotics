@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container text-center">
+    <h2 class="mb-5 fw-bold text-info">Our Courses</h2>
+    <div class="row g-4">
+        <!-- QR Code Card: ALL about AI -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='images/micro.jpeg') }}" alt="QR Code" class="img-fluid mb-3" style="max-width: 150px;">
+                    <h5 class="card-title fw-bold">Microsoft AI Skills Navigator</h5>
+                    <p class="card-text">Scan the Code</p>
+                </div>
+            </div>
+        </div>
+        <!-- Course 1: Introduction to Robotics -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-robot fa-3x text-info mb-3"></i>
+                    <h5 class="card-title fw-bold">Introduction to Robotics</h5>
+                    <p class="card-text">Learn the basics of robot mechanics, electronics, and control systems.</p>
+                    <a href="{{ url_for('intro_rob', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 2: Arduino Projects -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-microchip fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">Arduino Projects</h5>
+                    <p class="card-text">Hands-on microcontroller programming and interfacing using Arduino boards.</p>
+                    <a href="{{ url_for('arduino', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 3: Raspberry Pi & Python -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-pi fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">Raspberry Pi & Python</h5>
+                    <p class="card-text">Develop smart systems with Python and Raspberry Pi integration.</p>
+                    <a href="{{ url_for('rasp', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 5: Sensors and Actuators -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-sensor fa-3x text-danger mb-3"></i>
+                    <h5 class="card-title fw-bold">Sensors and Actuators</h5>
+                    <p class="card-text">Explore the basics of sensors and actuators for smart system development.</p>
+                    <a href="{{ url_for('sensors', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 6: Motion Planning and Control -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-road fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">Motion Planning and Control</h5>
+                    <p class="card-text">Learn algorithms for motion planning and control in robotic systems.</p>
+                    <a href="{{ url_for('course_detail', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 7: Computer Vision -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-camera fa-3x text-info mb-3"></i>
+                    <h5 class="card-title fw-bold">Computer Vision</h5>
+                    <p class="card-text">Dive into the world of image processing and object recognition using Python.</p>
+                    <a href="{{ url_for('course_detail', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 8: Machine Learning for Robotics -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-brain fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">Machine Learning for Robotics</h5>
+                    <p class="card-text">Learn how to apply machine learning techniques in robotic systems.</p>
+                    <a href="{{ url_for('course_detail', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 9: Robot Operating System (ROS) -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-cogs fa-3x text-danger mb-3"></i>
+                    <h5 class="card-title fw-bold">Robot Operating System (ROS)</h5>
+                    <p class="card-text">Master ROS to manage robotic systems with modular components and tools.</p>
+                    <a href="{{ url_for('ros', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 10: Robotic Arm Control -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-hand-rock fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">Robotic Arm Control</h5>
+                    <p class="card-text">Learn to control robotic arms with programming and sensor feedback.</p>
+                    <a href="{{ url_for('course_detail', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 11: Industrial and Humanoid Robotics -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-industry fa-3x text-info mb-3"></i>
+                    <h5 class="card-title fw-bold">Industrial and Humanoid Robotics</h5>
+                    <p class="card-text">Explore industrial automation and humanoid robot applications.</p>
+                    <a href="{{ url_for('course_detail', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 12: Embedded Systems (Arduino/Raspberry Pi) -->
+        <div class="col-md-4">
+            <div class="card bg-secondary text-light h-100 shadow">
+                <div class="card-body d-flex flex-column">
+                    <i class="fas fa-cogs fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">Embedded Systems (Arduino/Raspberry Pi)</h5>
+                    <p class="card-text">Develop embedded systems using Arduino and Raspberry Pi for various applications.</p>
+                    <a href="{{ url_for('course_detail', course_name='robotics') }}" class="btn btn-outline-info mt-auto">More Info</a>
+                </div>
+            </div>
+        </div><br>
+        
+    </div>
+{% endblock %}

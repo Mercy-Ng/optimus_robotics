@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- Hero Section -->
+  <section class="hero text-center">
+    <h1>Docker and Containerization for Robotics with ROS 2</h1>
+    <p class="lead">Master Docker for scalable, portable, and reproducible ROS 2 applications</p>
+  </section>
+
+  <!-- Course Overview -->
+  <div class="container mt-5">
+    <h2>Course Overview</h2>
+    <p>This course provides a comprehensive introduction to Docker and containerization tailored for robotics using ROS 2. Learn how to package, deploy, and manage ROS 2 projects in Docker containers with real-world examples and best practices.</p>
+    <ul>
+      <li><strong>Duration:</strong> 20-30 hours (lectures + hands-on labs)</li>
+      <li><strong>Format:</strong> Online or In-person with interactive coding sessions</li>
+    </ul>
+
+    <h4>Prerequisites:</h4>
+    <ul>
+      <li>Basic Linux command-line skills</li>
+      <li>Familiarity with ROS 2 (Humble or Iron)</li>
+      <li>Basic Python or C++ knowledge</li>
+    </ul>
+  </div>
+
+  <!-- Modules -->
+  <div class="container mt-5">
+    <h2>Course Modules</h2>
+
+    <div class="module">
+      <h4>Module 1: Introduction to Docker and Containerization</h4>
+      <ul>
+        <li>What is Docker and why it's important for robotics</li>
+        <li>Key concepts: containers, images, Dockerfile, Docker Hub</li>
+        <li>Installing Docker on Linux, Windows, macOS</li>
+        <li>Running your first Ubuntu container</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h4>Module 2: Running ROS 2 Projects in Docker</h4>
+      <ul>
+        <li>Benefits of containerizing ROS 2</li>
+        <li>Using official ROS 2 Docker images</li>
+        <li>Networking and volume mounting in Docker</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h4>Module 3: Packaging ROS 2 Projects</h4>
+      <ul>
+        <li>Creating custom Dockerfiles</li>
+        <li>Building and running your containerized ROS 2 package</li>
+        <li>Using docker-compose for multi-container systems</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h4>Module 4: Best Practices</h4>
+      <ul>
+        <li>Optimizing Docker images</li>
+        <li>Security considerations</li>
+        <li>CI/CD integration using GitHub Actions</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h4>Module 5: Hands-on Project – Dockerized ROS 2 Robot Simulation</h4>
+      <ul>
+        <li>Running TurtleBot3 in a containerized Gazebo simulation</li>
+        <li>Extending the project with custom nodes and Docker Swarm</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Assessment -->
+  <div class="container mt-5">
+    <h2>Final Assessment & Certification</h2>
+    <ul>
+      <li>Dockerize and deploy a ROS 2 project</li>
+      <li>Take a quiz on Docker and ROS 2 best practices</li>
+      <li>Earn a Certificate of Completion</li>
+    </ul>
+  </div>
+
+  <!-- Conclusion -->
+  <div class="container mt-5 mb-5">
+    <h2>Conclusion</h2>
+    <p>By the end of this course, you will confidently package and deploy ROS 2 robotics applications using Docker, with a strong understanding of best practices for scalable and reproducible systems.</p>
+    <p><strong>Want to go further?</strong> Ask us about GPU acceleration and Kubernetes for swarm robotics!</p>
+  </div>
+
+  <div class="content-box text-center">
+    <a href="{{ url_for('robotarm', course_name='electronics_and_microcontrollers') }}" class="btn btn-primary btn-lg">Go to Next Courses</a>
+ </div>
+  <style>
+    .hero { background-color: #142339; color: rgb(76, 225, 210); padding: 50px 20px; }
+    .module { margin-bottom: 30px; }
+    .footer { background-color: #124272; padding: 20px; text-align: center; }
+  </style>
+{% endblock %}

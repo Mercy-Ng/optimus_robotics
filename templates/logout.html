@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h2 class="text-danger">You have been logged out.</h2>
+    <p class="text-muted">Redirecting to login page in 3 seconds...</p>
+</div>
+<meta http-equiv="refresh" content="3; url=/login" />
+{% endblock %}

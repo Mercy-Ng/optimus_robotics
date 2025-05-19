@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h4>Module 2: Robot Components and Mechanics</h4>
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center text-primary mb-4">Module 2: Robot Components and Mechanics</h1>
+        <p class="text-center"><strong>Duration:</strong> 2 Weeks</p>
+    
+        <div class="content-box">
+            <h4 class="module-heading">📘 Topics Covered</h4>
+            <ul>
+                <li><strong>Actuators:</strong> Convert electrical signals into motion.
+                    <ul>
+                        <li><strong>Motors:</strong> Rotate joints or wheels.</li>
+                        <li><strong>Servos:</strong> Enable precise angular motion.</li>
+                        <li><strong>Hydraulic Systems:</strong> Powerful lifting for heavy robots.</li>
+                    </ul>
+                </li>
+                <li><strong>Sensors:</strong> Enable robots to sense their environment.
+                    <ul>
+                        <li>Ultrasonic: Measures distance.</li>
+                        <li>Infrared (IR): Detects proximity.</li>
+                        <li>LiDAR: Maps surroundings in 3D.</li>
+                        <li>Cameras: For visual input and computer vision.</li>
+                    </ul>
+                </li>
+                <li><strong>End-Effectors:</strong> The "hands" of the robot.
+                    <ul>
+                        <li>Grippers for picking and placing items.</li>
+                        <li>Welding tools and suction cups for precision tasks.</li>
+                    </ul>
+                </li>
+                <li><strong>Kinematics:</strong> Study of motion.
+                    <ul>
+                        <li>Forward Kinematics: Position from joint angles.</li>
+                        <li>Inverse Kinematics: Joint angles from desired position.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="content-box">
+            <h4 class="module-heading">🛠️ Practical Examples</h4>
+            <ul>
+                <li><strong>Lab Exercise:</strong> Assemble a simple wheeled robot using DC motors. Learn wiring, motor direction testing, and speed control.</li>
+                <li><strong>Problem-Solving Task:</strong> Calculate torque for lifting a 1kg object using:<br>
+                    <code>Torque = Force × Distance from pivot</code><br>
+                    This introduces applied mechanical engineering concepts.
+                </li>
+            </ul>
+        </div>
+    
+        <div class="content-box text-center">
+            <a href="{{ url_for('arduino', course_name='electronics_and_microcontrollers') }}" class="btn btn-primary btn-lg">Go to Next Courses</a>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>   
+    .section-title {
+        background-color: #004080;
+        color: rgb(3, 3, 50);
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    .content-box {
+        background: rgb(1, 19, 24);
+        padding: 20px;
+        border-left: 5px solid #004080;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .module-heading {
+        color: #004080;
+    }
+</style>
+{% endblock %}

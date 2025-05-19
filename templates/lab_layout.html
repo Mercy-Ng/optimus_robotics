@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4 text-light">
+    Please signup to explore more about the courses and view tutorials.
+  </h2>
+
+  <div class="text-center mb-5">
+    <a href="/register" class="btn btn-outline-light btn-lg px-4 py-2 bg-primary">
+      🎓 View Enrollment Options
+    </a>
+  </div>
+
+  <div class="row justify-content-center g-4">
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm border-success hover-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">🏠 Home</h5>
+          <a href="{{ url_for('index') }}" class="stretched-link text-success fw-bold text-decoration-none">Visit Home</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm border-success hover-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">📚 Courses</h5>
+          <a href="{{ url_for('courses') }}" class="stretched-link text-success fw-bold text-decoration-none">View Courses</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm border-success hover-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">ℹ️ About Us</h5>
+          <a href="{{ url_for('about') }}" class="stretched-link text-success fw-bold text-decoration-none">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm border-success hover-card">
+        <div class="card-body text-center">
+          <h5 class="card-title">📞 Contact</h5>
+          <a href="{{ url_for('contact') }}" class="stretched-link text-success fw-bold text-decoration-none">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <h4 class="text-center text-light mb-4">Explore Our Lab in Action</h4>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (2).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div> 
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (3).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (10).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (9).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas.jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (13).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (4).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div> 
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (1).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <div class="equal-image-card">
+            <img src="{{ url_for('static', filename='images/optimas (12).jpg') }}" class="card-img-top" alt="Lab 1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<style>
+  .hover-card:hover {
+    background-color: #d1e7dd;
+    border-color: #0f5132;
+    transform: translateY(-5px);
+    transition: 0.3s ease-in-out;
+  }
+  .equal-image-card {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .equal-image-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+</style>
+{% endblock %}

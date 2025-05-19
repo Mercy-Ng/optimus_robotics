@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Week 1: Introduction to Arduino</h1>
+
+    <h2>1.1 What is Arduino?</h2>
+    <p>Arduino is an open-source electronics platform based on easy-to-use hardware and software.</p>
+    <ul>
+        <li><b>Uno:</b> Beginner-friendly</li>
+        <li><b>Nano:</b> Compact for small robots</li>
+        <li><b>Mega:</b> For complex projects</li>
+    </ul>
+
+    <h2>1.2 Blink LED Example</h2>
+    <pre><code>void setup() {
+        pinMode(13, OUTPUT);
+            }
+            void loop() {
+            digitalWrite(13, HIGH);
+            delay(1000);
+            digitalWrite(13, LOW);
+            delay(1000);
+        }
+    </code></pre>
+
+        <h2>1.3 Button & LED</h2>
+        <pre><code>int buttonPin = 2;
+            int ledPin = 13;
+
+            void setup() {
+            pinMode(buttonPin, INPUT);
+            pinMode(ledPin, OUTPUT);
+            }
+
+            void loop() {
+            if (digitalRead(buttonPin) == HIGH) {
+                digitalWrite(ledPin, HIGH);
+            } else {
+                digitalWrite(ledPin, LOW);
+            }
+            }
+        </code></pre>
+
+        <h2>Mini-Project: Obstacle Avoiding Robot</h2>
+        <p>Uses Ultrasonic Sensor + L298N Motor Driver</p>
+        <pre><code>if (distance &lt; 20) {
+            // Turn right
+            } else {
+            // Move forward
+            }
+        </code></pre>
+        <div class="content-box text-center">
+            <a href="{{ url_for('rasp', course_name='electronics_and_microcontrollers') }}" class="btn btn-primary btn-lg">Go to Next Courses</a>
+        </div>
+
+    <style>
+        h1, h2 { color: #dbebf8; }
+        code, pre { background: rgb(6, 105, 133); padding: 10px; display: block; border-left: 5px solid #2a4d69; }
+    </style>
+{% endblock %}
